@@ -11,7 +11,8 @@
 	<groupId>com</groupId>
 	<artifactId>dna-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dna-service</name>
+    <packaging>pom</packaging>
+    <name>dna-service</name>
 	<description>Configuration Service for distributed systems</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,14 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>app</module>
+		<module>service</module>
+		<module>dal</module>
+		<module>delivery</module>
+		<module>functional-tests</module>
+	</modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
