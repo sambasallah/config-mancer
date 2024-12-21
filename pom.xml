@@ -21,6 +21,7 @@
 	<developers>
 		<developer/>
 	</developers>
+
     <modules>
         <module>app</module>
 		<module>service</module>
@@ -36,25 +37,32 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<postgresql.version>42.7.4</postgresql.version>
+		<spring.boot.starter.version>3.4.0</spring.boot.starter.version>
+		<spring.boot.starter.web>3.4.1</spring.boot.starter.web>
+		<liquidbase.core.version>4.30.0</liquidbase.core.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>${spring.boot.starter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring.boot.starter.web}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
+			<version>${liquidbase.core.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
+			<version>${postgresql.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
