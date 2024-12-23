@@ -23,11 +23,13 @@
 	</developers>
 
     <modules>
-        <module>app</module>
-		<module>service</module>
-		<module>dal</module>
-		<module>delivery</module>
-		<module>functional-tests</module>
+        <module>config-mancer-app</module>
+		<module>config-mancer-service</module>
+		<module>config-mancer-dal</module>
+		<module>config-mancer-common</module>
+		<module>config-mancer-functional-tests</module>
+		<module>config-mancer-biz</module>
+		<module>config-mancer-api</module>
 	</modules>
     <scm>
 		<connection/>
