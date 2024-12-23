@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>app</artifactId>
+    <artifactId>config-mancer-functional-tests</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
