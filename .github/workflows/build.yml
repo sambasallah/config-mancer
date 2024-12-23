@@ -6,7 +6,7 @@ on:
       - 'v*'
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
 
 jobs:
   build:
@@ -21,19 +21,21 @@ jobs:
         java-version: '21'
         distribution: 'zulu'
         cache: maven
+    # Build App
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Create Release Version
+    - uses: actions/checkout@v2
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.1
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: |
-          Changes in this Release
-          - First Change
-          - Second Change
-        draft: false
-        prerelease: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create a GitHub release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.tag_version.outputs.new_tag }}
+        name: ${{ steps.tag_version.outputs.new_tag }}
+        body: ${{ steps.tag_version.outputs.changelog }}
+
