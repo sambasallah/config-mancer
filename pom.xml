@@ -12,7 +12,7 @@
 	<artifactId>config-mancer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>dna-service</name>
+    <name>config-mancer-service</name>
 	<description>Configuration Service for distributed systems</description>
 	<url/>
 	<licenses>
@@ -30,6 +30,7 @@
 		<module>config-mancer-functional-tests</module>
 		<module>config-mancer-biz</module>
 		<module>config-mancer-api</module>
+		<module>config-mancer-batch</module>
 	</modules>
     <scm>
 		<connection/>
